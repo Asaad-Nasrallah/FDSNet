@@ -20,3 +20,16 @@ provides both robustness and quantifiable advantages over static fusion strategi
 ## Quick Start
 ### Prerequisites 
 The code is built with following libraries:
+- [**Python** = 3.8.20](https://www.python.org/)
+- [**CUDA** = 11.3](https://developer.nvidia.com/cuda-11.3.0-download-archive)
+- [**cuDNN** = 8.2](https://developer.nvidia.com/cudnn)
+- [**PyTorch** = 1.10.0](https://pytorch.org/get-started/previous-versions/)
+- [**TorchVision** = 0.11.1](https://pytorch.org/vision/stable/index.html)
+- [**OpenCV** = 4.11.0](https://opencv.org/releases/)
+- [**MMEngine** = 0.10.7](https://github.com/open-mmlab/mmengine)
+- [**MMCV** = 1.4.0](https://github.com/open-mmlab/mmcv)
+- [**MMDetection3D** = 1.2.0](https://github.com/open-mmlab/mmdetection3d)
+
+
+
+
