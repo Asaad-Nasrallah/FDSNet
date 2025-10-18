@@ -19,7 +19,13 @@ mAP on the validation set, and +2.1% in NDS and +1.6% in mAP on the test set, hi
 provides both robustness and quantifiable advantages over static fusion strategies.
 ## Quick Start
 ### Prerequisites 
-The code is built with following libraries:
+#### Step 0. Download and install Miniconda from the [official website.](https://www.anaconda.com/docs/main)
+#### Step 1. Create a conda environment and activate it.
+```
+conda create --name FDSNet python=3.8 -y
+conda activate FDSNet
+```
+#### Step 2. Install required libraries and dependencies.
 - [**Python** = 3.8.20](https://www.python.org/)
 - [**CUDA** = 11.3](https://developer.nvidia.com/cuda-11.3.0-download-archive)
 - [**cuDNN** = 8.2](https://developer.nvidia.com/cudnn)
@@ -29,6 +35,42 @@ The code is built with following libraries:
 - [**MMEngine** = 0.10.7](https://github.com/open-mmlab/mmengine)
 - [**MMCV** = 1.4.0](https://github.com/open-mmlab/mmcv)
 - [**MMDetection3D** = 1.2.0](https://github.com/open-mmlab/mmdetection3d)
+- 
+### Installation
+#### Step 0. Install FDSNet
+```
+git clone https://github.com/Asaad-Nasrallah/FDSNet.git
+cd mmdetection3d-1.2.0
+pip install -v -e .
+```
+### Data preparation
+#### nuScenes
+##### Step 0. Download [nuScenes Dataset]([https://www.cvlibs.net/datasets/kitti/](https://github.com/open-mmlab/mmdetection3d/blob/1.0/docs/en/datasets/nuscenes_det.md)).
+The directory will be as follows.
+```
+├── mmdet3d
+├── tools
+├── configs
+├── data
+│ ├── nuscenes
+│ │ ├── maps
+│ │ ├── samples
+│ │ ├── sweeps
+│ │ ├── v1.0-test
+│ │ ├── v1.0-trainval
+│ │ ├── nuscenes_database
+│ │ ├── nuscenes_infos_train.pkl
+│ │ ├── nuscenes_infos_val.pkl
+│ │ ├── nuscenes_infos_test.pkl
+│ │ └── nuscenes_dbinfos_train.pkl
+```
+### Test FDSNet (LiDAR + Radar + Camera Fusion) on the NuScenes Dataset and Evaluate mAP.
+```
+python tools/test.py
+configs/fdsnet/fdsnet_fusion_3sensors_nuscenes.py
+checkpoints/fdsnet_fusion_3sensors_nuscenes.pth
+--eval mAP
+```
 
 
 
